@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>地域工務店 会社案内・代表挨拶 | コーポレートテキストサンプル — Yuki Writes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="sample-common.css">
+<style>
+/* コーポレートページ追加スタイル */
+.corp-hero {
+  background: linear-gradient(135deg, #1F3A5F 0%, #162C4A 100%);
+  color: #fff;
+  padding: 52px 40px 44px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.corp-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 30%, rgba(184,205,176,0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+.corp-hero-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.85);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 16px;
+  border-radius: 99px;
+  margin-bottom: 16px;
+  letter-spacing: 0.08em;
+}
+.corp-hero h1 {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.45;
+  margin-bottom: 12px;
+}
+.corp-hero p {
+  font-size: 15px;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.7;
+}
+
+/* 代表メッセージエリア */
+.president-section {
+  background: var(--color-bg-soft);
+  border-radius: 12px;
+  padding: 36px;
+  margin: 0 0 36px;
+}
+.president-section h2 {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+  padding: 0;
+  background: none;
+  border-left: none;
+  border-radius: 0;
+}
+.president-title {
+  font-size: 13px;
+  color: var(--color-text-mute);
+  margin-bottom: 24px;
+  display: block;
+}
+.president-section p {
+  margin-bottom: 18px;
+}
+.president-sign {
+  text-align: right;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-top: 24px;
+}
+
+/* 3つの約束 */
+.promise-card {
+  background: var(--color-bg);
+  border-radius: 12px;
+  padding: 28px;
+  margin-bottom: 16px;
+  border: 1px solid var(--color-border);
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+.promise-num {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  background: var(--color-primary);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 800;
+}
+.promise-content h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+}
+.promise-content p {
+  font-size: 14.5px;
+  color: var(--color-text-sub);
+  line-height: 1.85;
+  margin-bottom: 0;
+}
+
+/* スタッフカード */
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin: 20px 0;
+}
+.staff-card {
+  background: var(--color-bg-soft);
+  border-radius: 10px;
+  padding: 20px;
+  border: 1px solid var(--color-border);
+}
+.staff-card strong { display: block; font-size: 15px; color: var(--color-primary); margin-bottom: 2px; }
+.staff-card .staff-role { font-size: 12px; color: var(--color-text-mute); margin-bottom: 8px; }
+.staff-card .staff-msg { font-size: 13.5px; color: var(--color-text-sub); line-height: 1.75; font-style: italic; }
+
+/* 選ばれる方 */
+.audience-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.audience-list li {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 14.5px;
+  color: var(--color-text-sub);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.audience-list li::before {
+  content: "✓";
+  color: var(--color-sub-green);
+  font-weight: bold;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.audience-list li:last-child { border-bottom: none; }
+
+/* CTA ボタン（コーポレート用） */
+.corp-cta-area {
+  text-align: center;
+  padding: 40px 40px 0;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.btn-corp-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 14px 32px;
+  border-radius: 99px;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(224,133,96,0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-corp-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(224,133,96,0.4); }
+.btn-corp-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--color-primary);
+  font-size: 15px;
+  font-weight: bold;
+  padding: 14px 32px;
+  border-radius: 99px;
+  border: 2px solid var(--color-primary);
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-corp-outline:hover { background: var(--color-primary); color: #fff; }
+
+@media (max-width: 640px) {
+  .corp-hero { padding: 36px 20px 32px; }
+  .corp-hero h1 { font-size: 22px; }
+  .president-section { padding: 24px 20px; }
+  .staff-grid { grid-template-columns: 1fr; }
+  .corp-cta-area { padding: 28px 20px 0; flex-direction: column; align-items: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV BAR -->
+<nav class="sample-nav">
+  <a href="../index.html" class="back-link">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    ポートフォリオに戻る
+  </a>
+  <span class="nav-divider">/</span>
+  <span class="nav-label">コーポレートテキストサンプル</span>
+</nav>
+
+<div class="article-wrapper">
+
+  <!-- コーポレートヒーロー -->
+  <div class="corp-hero">
+    <div class="corp-hero-badge">Company Profile</div>
+    <h1>「家を建てる」の前に、<br>「人を信じる」から。</h1>
+    <p>株式会社マルイチ工務店｜会社案内・代表挨拶</p>
+  </div>
+
+  <!-- 案件概要 -->
+  <div class="spec-box">
+    <h2>📝 案件概要</h2>
+    <table class="spec-table">
+      <tr><th>想定クライアント</th><td>地域密着型の工務店（創業30年・社員10名規模）</td></tr>
+      <tr><th>想定読者</th><td>①住宅購入を検討中の30〜50代夫婦　②求職者　③金融機関</td></tr>
+      <tr><th>目的（KGI）</th><td>①資料請求 月15件　②採用応募 年5名　③信頼性の向上</td></tr>
+      <tr><th>想定流入経路</th><td>公式サイト・Googleビジネスプロフィール・チラシQR</td></tr>
+      <tr><th>工夫したポイント</th><td>①ストーリーで人柄を伝える　②控えめなCTA　③理念→実績→人 の順で信頼を積む</td></tr>
+    </table>
+  </div>
+
+  <div class="article-body">
+
+    <h2>はじめに</h2>
+
+    <p>株式会社マルイチ工務店は、1995年の創業以来、この地域で家づくりを続けてきた工務店です。</p>
+    <p>社員は10名。大きな会社ではありません。テレビCMも、全国チェーンのような派手な広告も出していません。それでも毎年、新しいお客様がドアを叩いてくださるのは、建てた家に住む方々の口コミがあってのことだと、社員一同、深く感謝しています。</p>
+    <p>私たちが大切にしているのは、「家」という物よりも、そこに住む「人」との関係です。その考えは、創業当初からまったく変わっていません。</p>
+
+    <h2>代表挨拶</h2>
+
+    <div class="president-section">
+      <h2>父の背中を見て育ちました。</h2>
+      <span class="president-title">代表取締役 丸一 誠司</span>
+      <p>子どもの頃の記憶に残っているのは、夕方になっても帰ってこない父の姿と、食卓で図面を広げながら「ここをこうしたら、もっと暮らしやすくなる」とつぶやく父の横顔です。大工ではなく現場監督だった父は、施主さんの話を聞き、メモを取り、また聞く。そういう仕事の仕方をする人でした。</p>
+      <p>中学生のとき、父に「なんでそんなに時間をかけて話を聞くの?」と聞いたことがあります。父は少し考えてから、こう言いました。</p>
+      <blockquote>「家は、住む人と一緒につくるんだ。俺の好みで建てても意味がない」</blockquote>
+      <p>その言葉の本当の意味を、私が理解したのはずっと後のことでした。</p>
+      <p>父が高齢になり、会社を引き継いだのは、私が34歳のときです。建築の専門学校を出て、県内の工務店で10年ほど修業を積んでいた私には、技術への自信はありました。ただ、父のような「人との向き合い方」が自分に備わっているかどうか、正直なところ、自信はありませんでした。</p>
+      <p>引き継いでから2年が経った頃、忘れられない出来事がありました。30代の若いご夫婦から家づくりの相談をいただいたときのことです。ご夫婦には小さなお子さんが2人いて、限られた予算の中で「子どもたちが思いきり走り回れる家にしたい」という夢をお持ちでした。私たちは打ち合わせを重ね、間取りを何度も書き直し、素材をひとつひとつ一緒に選びました。完成まで約1年かかりました。</p>
+      <p>お引き渡しの日、玄関を開けたとき、奥様が声を上げて泣かれました。私はとっさに「何か問題があったのか」と焦りましたが、奥様は首を横に振って「こんなに自分たちの家だと思えるものができるとは思わなかった」とおっしゃいました。</p>
+      <p>そのとき、父の言葉をようやく理解しました。<strong>家は、住む人が「自分たちの家だ」と思えたとき、初めて完成するのだ</strong>と思います。図面が完成したときでも、棟上げのときでも、引き渡しのときでもなく、住む人の心の中で完成する。それが家づくりというものなのだと、私はあのご夫婦から教わりました。</p>
+      <p>それ以来、私たちは<mark>「丁寧に話を聞くこと」を仕事の根幹</mark>に置いています。お客様の暮らしを知らなければ、家をつくることはできない。その信念は、創業者である父から私へ、そして今の私たちへと、変わらず受け継がれています。</p>
+      <div class="president-sign">代表取締役 丸一 誠司</div>
+    </div>
+
+    <h2>私たちの3つの約束</h2>
+
+    <div class="promise-card">
+      <div class="promise-num">1</div>
+      <div class="promise-content">
+        <h3>お話を、たくさん聞きます</h3>
+        <p>初回のご相談は、平均して3時間ほどかけてお話を伺います。「こんな細かいことまで話していいの?」と驚かれることもありますが、日々の暮らし方、料理の仕方、週末の過ごし方、そういったことが家の設計に直結すると私たちは考えています。</p>
+      </div>
+    </div>
+    <div class="promise-card">
+      <div class="promise-num">2</div>
+      <div class="promise-content">
+        <h3>地域の素材を、できる限り使います</h3>
+        <p>地元の山で育った木材、地域の職人が手がけた建具、この土地の気候に合った断熱材。流行の素材よりも、長く使えるものを。見栄えよりも、暮らしの中で本当に役立つものを選んでいます。</p>
+      </div>
+    </div>
+    <div class="promise-card">
+      <div class="promise-num">3</div>
+      <div class="promise-content">
+        <h3>建てた後も、ずっとお付き合いします</h3>
+        <p>家は建てたら終わりではありません。「あのとき建ててくれた工務店に連絡したら、もうなかった」という話を、私たちは聞きたくありません。定期点検と、いつでも相談できる関係。それを30年、続けてきました。</p>
+      </div>
+    </div>
+
+    <h2>私たちの歩み</h2>
+
+    <table>
+      <tr><th>年</th><th>できごと</th></tr>
+      <tr><td>1995年</td><td>創業者・丸一義雄が個人事業として創業。地域の新築・リフォーム工事を手がけはじめる</td></tr>
+      <tr><td>2003年</td><td>株式会社マルイチ工務店として法人化。社員5名体制へ</td></tr>
+      <tr><td>2009年</td><td>地域産材を活用した木造住宅の施工に本格参入。地元製材所との提携を開始</td></tr>
+      <tr><td>2015年</td><td>創業20周年。累計施工棟数が500棟を超える。省エネ住宅の設計・施工に対応</td></tr>
+      <tr><td>2019年</td><td>二代目・丸一誠司が代表就任。リフォーム部門を強化し、既存住宅の改修にも注力</td></tr>
+      <tr><td>2025年</td><td>創業30周年。地域密着の家づくりを次の世代へ引き継ぐべく、採用・人材育成を強化中</td></tr>
+    </table>
+
+    <h2>スタッフ紹介</h2>
+
+    <p>私たちのメンバーは全員、この地域で生まれ育った、地元出身のスタッフです。「地元の家のことは、地元の人間が一番よく知っている」という考えから、採用においても地域への愛着や定着意志を大切にしています。</p>
+
+    <div class="staff-grid">
+      <div class="staff-card">
+        <strong>丸一 誠司</strong>
+        <div class="staff-role">代表取締役</div>
+        <div class="staff-msg">「急がなくていいです。一緒にゆっくり考えましょう」</div>
+      </div>
+      <div class="staff-card">
+        <strong>田村 浩二</strong>
+        <div class="staff-role">設計担当</div>
+        <div class="staff-msg">「暮らしやすさは、細部に宿ります」</div>
+      </div>
+      <div class="staff-card">
+        <strong>中島 あかね</strong>
+        <div class="staff-role">コーディネーター</div>
+        <div class="staff-msg">「素材選びは、住む人の個性を引き出す作業だと思っています」</div>
+      </div>
+      <div class="staff-card">
+        <strong>大石 健太</strong>
+        <div class="staff-role">現場監督</div>
+        <div class="staff-msg">「現場の丁寧さが、10年後の家の状態を決めます」</div>
+      </div>
+    </div>
+
+    <h2>こんな方に選ばれています</h2>
+
+    <ul class="audience-list">
+      <li>複数社から提案を受けたが、話を聞いてもらえた感じがしなかった方</li>
+      <li>営業担当に急かされず、自分のペースで家づくりを進めたい方</li>
+      <li>地域の素材や、地元の職人の技術を使った家を希望している方</li>
+      <li>建てた後も、長く付き合える工務店を探している方</li>
+      <li>子育て中で、安全な素材・室内環境を重視したい方</li>
+      <li>予算内で、本当に必要なものを見極めながら家づくりをしたい方</li>
+    </ul>
+    <p>「こんな条件でも建てられますか?」という相談も、遠慮なくお声がけください。無理な場合は正直にお伝えします。</p>
+
+  </div><!-- /article-body -->
+
+  <!-- CTA -->
+  <div class="corp-cta-area">
+    <a href="#" class="btn-corp-primary">資料請求はこちら</a>
+    <a href="#" class="btn-corp-outline">ご相談・見学のご予約はこちら</a>
+  </div>
+  <p style="text-align:center; font-size:12px; color:var(--color-text-mute); padding: 16px 40px 0;">お問い合わせには、3営業日以内にご連絡いたします。</p>
+
+  <!-- 戦略解説 -->
+  <div class="strategy-box" style="margin-top: 60px;">
+    <h2>💡 この記事で意識した戦略</h2>
+    <p>単なる「会社紹介」ではなく、<strong>「人柄と信念を感じさせるストーリーテリング」</strong>によって、読者の信頼を段階的に積み上げる構成を設計しました。</p>
+    <table class="strategy-table">
+      <tr><th>ポイント</th><th>意図</th></tr>
+      <tr><td>キャッチコピー「家を建てる前に、人を信じる」</td><td>技術・価格ではなく「人」で選ばせるブランドポジションを冒頭で確立。他社との差別化を図る</td></tr>
+      <tr><td>代表挨拶をエピソードで構成</td><td>「父の言葉」「若い夫婦との出会い」という具体的エピソードを通じて、スペックではなく人柄を伝える。感情を動かすことで記憶に残りやすくする</td></tr>
+      <tr><td>「3つの約束」で具体化</td><td>抽象的な理念を「3時間のヒアリング」「地域素材」「アフターフォロー30年」という行動に落とし込み、信頼を具体的・検証可能にする</td></tr>
+      <tr><td>CTAを控えめに配置</td><td>コーポレートページは購入意思決定の初期段階。押しつけがましいCTAは逆効果なため、「急ぎません」というコピーで心理的ハードルを下げる</td></tr>
+      <tr><td>「理念→実績→人」の構成順序</td><td>まず「なぜやるか」で共感を得て、次に「実績」で信頼を補強し、最後に「人」で親近感を醸成。信頼を段階的に積み上げる順番を意識した</td></tr>
+    </table>
+  </div>
+
+</div><!-- /article-wrapper -->
+
+<footer class="sample-footer">
+  <a href="../index.html">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    ポートフォリオに戻る
+  </a>
+</footer>
+
+</body>
+</html>
